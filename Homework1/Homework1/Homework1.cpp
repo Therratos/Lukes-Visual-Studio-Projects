@@ -60,7 +60,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		while (a) 
 		{
 			a = false;
-
+			//iterator points to the first/next element in the movementPath, then checks to see if it at the last element of the movementPath (! = not), if not then it adds 1 to index and checks the next element and repeats until it reaches the end.
 			for (std::vector<Vector2>::iterator index = movementPath.begin(); index != movementPath.end(); ++index) 
 			{
 				if ((index + 1) == movementPath.end())
