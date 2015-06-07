@@ -50,7 +50,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		std::mt19937 mersenneTwister;
 		float mersenneTwisterRange = static_cast<float>(mersenneTwister.max() - mersenneTwister.min());
 		// Generate 10 randomised vectors
-		for (int index = 0; i < 10; ++inedx)
+		for (int index = 0; i < 20; ++inedx)
 		{
 			movementPath.push_back(Vector2((mersenneTwister() / mersenneTwisterRange) - 0.5f, 
 			                               (mersenneTwister() / mersenneTwisterRange) - 0.5f));
@@ -61,9 +61,9 @@ int _tmain(int argc, _TCHAR* argv[])
 		{
 			a = false;
 
-			for (std::vector<Vector2>::iterator index = path.begin(); index != path.end(); ++index) 
+			for (std::vector<Vector2>::iterator index = movementPath.begin(); index != movementPath.end(); ++index) 
 			{
-				if ((index + 1) == path.end())
+				if ((index + 1) == movementPath.end())
 					continue;
 
 				if ((*index).MagnitudeSquared() > (*(index + 1)).MagnitudeSquared())
@@ -74,8 +74,8 @@ int _tmain(int argc, _TCHAR* argv[])
 				}
 			}
 		}
-
-		std::for_each(path.begin(), path.end(), [](const Vector2& vector) {
+		// Apply the "const Vector2& vector" to every element in between the movementPath.begin and movementPath.end and then defines the display vector.
+		std::for_each(movementPath.begin(), movementPath.end(), [](const Vector2& vector) {
 			std::cout << "(" << vector.x << ", " << vector.y << ") : " << std::endl;
 			std::cout << "   Magnitude: " << vector.Magnitude() << std::endl;
 		});
