@@ -45,10 +45,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	// Update this code block to match the style of the previous block
 
 	{
-		std::vector<Vector2> p;
+		std::vector<Vector2> movementPath;
 
-		std::mt19937 mt;
-		float mtr = static_cast<float>(mt.max() - mt.min());
+		std::mt19937 mersenneTwister;
+		float mersenneTwisterRange = static_cast<float>(mersenneTwister.max() - mersenneTwister.min());
 
 		for (int i = 0; i < 10; ++i)
 		{
