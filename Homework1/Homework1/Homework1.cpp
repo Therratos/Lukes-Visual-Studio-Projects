@@ -50,7 +50,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		std::mt19937 mersenneTwister;
 		float mersenneTwisterRange = static_cast<float>(mersenneTwister.max() - mersenneTwister.min());
 		// Generate 10 randomised vectors
-		for (int index = 0; i < 20; ++inedx)
+		for (int index = 0; index < 20; ++index)
 		{
 			movementPath.push_back(Vector2((mersenneTwister() / mersenneTwisterRange) - 0.5f, 
 			                               (mersenneTwister() / mersenneTwisterRange) - 0.5f));
