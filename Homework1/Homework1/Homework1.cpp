@@ -75,9 +75,9 @@ int _tmain(int argc, _TCHAR* argv[])
 			}
 		}
 
-		std::for_each(p.begin(), p.end(), [](const Vector2& v) {
-			std::cout << "(" << v.x << ", " << v.y << ") : " << std::endl;
-			std::cout << "   Magnitude: " << v.Magnitude() << std::endl;
+		std::for_each(p.begin(), p.end(), [](const Vector2& vector) {
+			std::cout << "(" << vector.x << ", " << vector.y << ") : " << std::endl;
+			std::cout << "   Magnitude: " << vector.Magnitude() << std::endl;
 		});
 	}
 
