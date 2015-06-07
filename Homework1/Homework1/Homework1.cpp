@@ -61,9 +61,9 @@ int _tmain(int argc, _TCHAR* argv[])
 		{
 			a = false;
 
-			for (std::vector<Vector2>::iterator index = p.begin(); index != p.end(); ++index) 
+			for (std::vector<Vector2>::iterator index = movementPath.begin(); index != movementPath.end(); ++index) 
 			{
-				if ((index + 1) == p.end())
+				if ((index + 1) == movementPath.end())
 					continue;
 
 				if ((*index).MagnitudeSquared() > (*(index + 1)).MagnitudeSquared())
@@ -75,7 +75,7 @@ int _tmain(int argc, _TCHAR* argv[])
 			}
 		}
 
-		std::for_each(p.begin(), p.end(), [](const Vector2& vector) {
+		std::for_each(movementPath.begin(), movementPath.end(), [](const Vector2& vector) {
 			std::cout << "(" << vector.x << ", " << vector.y << ") : " << std::endl;
 			std::cout << "   Magnitude: " << vector.Magnitude() << std::endl;
 		});
