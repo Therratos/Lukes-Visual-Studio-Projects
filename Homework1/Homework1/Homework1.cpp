@@ -46,13 +46,14 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	{
 		std::vector<Vector2> movementPath;
-
+		// Setup a mersenne twister for generating our random numbers and store it's range
 		std::mt19937 mersenneTwister;
 		float mersenneTwisterRange = static_cast<float>(mersenneTwister.max() - mersenneTwister.min());
-
-		for (int i = 0; i < 10; ++i)
+		// Generate 10 randomised vectors
+		for (int index = 0; i < 10; ++inedx)
 		{
-			p.push_back(Vector2((mt() / mtr) - 0.5f, (mt() / mtr) - 0.5f));
+			movementPath.push_back(Vector2((mersenneTwister() / mersenneTwisterRange) - 0.5f, 
+			                               (mersenneTwister() / mersenneTwisterRange) - 0.5f));
 		}
 
 		bool a = true;
@@ -60,14 +61,14 @@ int _tmain(int argc, _TCHAR* argv[])
 		{
 			a = false;
 
-			for (std::vector<Vector2>::iterator i = p.begin(); i != p.end(); ++i) 
+			for (std::vector<Vector2>::iterator index = p.begin(); index != p.end(); ++index) 
 			{
-				if ((i + 1) == p.end())
+				if ((index + 1) == p.end())
 					continue;
 
-				if ((*i).MagnitudeSquared() > (*(i + 1)).MagnitudeSquared())
+				if ((*index).MagnitudeSquared() > (*(index + 1)).MagnitudeSquared())
 				{
-					std::iter_swap(i, i + 1);
+					std::iter_swap(index, index + 1);
 
 					a = true;
 				}
